@@ -29,7 +29,7 @@ function convertDate(unixtimestamp) {
 	var day = date.getDate();
 
 	// Display date time in MM/dd/yyyy format
-	var convertedTime = month + "/" + day + "/" + year;
+	var convertedTime = day + "/" + month + "/" + year;
 
 	return convertedTime;
 }
@@ -109,7 +109,7 @@ const updateUI = async () => {
 		const data = await request.json();
 		console.log("updateUI: ", data);
 		document.getElementById("date").innerHTML = `Date: ${data.date}`;
-		document.getElementById("temp").innerHTML = `Temperature(°C): ${data.temperature}`;
+		document.getElementById("temp").innerHTML = `Temperature(°F): ${data.temperature}`;
 		document.getElementById("content").innerHTML = `Feelings: ${data.userResponse}`;
 	} catch (error) {
 		console.log("error", error);
